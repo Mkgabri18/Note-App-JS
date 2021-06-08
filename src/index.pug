@@ -1,0 +1,43 @@
+//- mixin noteCard
+//-   .note__item
+//-     .note__head
+//-       span.note__close: i.fas.fa-times-circle
+//-     .note__title: p Titulo de prueba
+//-     .note__body
+//-       p Ejemplo de paragrafo argumentativo
+
+dialog#modal
+  form.modal__form
+    input.modal__title(type="text", placeholder="Insert Title", autofocus)
+    textarea.modal__description(
+      rows="8",
+      cols=" 50",
+      placeholder="Add Note",
+      size="30"
+    )
+    .modal__cta
+      button.modal__cta--clean(type="button", onclick="cleanForm()", disabled) Clean
+      button.modal__cta--add(
+        type="submit",
+        onclick="saveNote(event)",
+        disabled
+      ) Save
+
+  span#closeModal.modal__close(onclick="closeModal()")
+    i.fas.fa-times(role="button")
+
+.container
+  .note__create
+    button(onclick="openModal()") Create Note
+  .note__list
+    //- +noteCard
+    //- +noteCard
+
+template
+  .note__item
+    .note__title: p Titulo de prueba
+    .note__body
+      p Ejemplo de paragrafo argumentativo
+    .note__cta
+      span.note__edit(onclick="editNote(this)"): i.fas.fa-edit
+      span.note__delete(onclick="deleteNote(this)"): i.fas.fa-trash-alt

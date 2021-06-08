@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+dialog {
+  z-index: 10;
+  padding: 1.5em;
+  border-radius: 15px;
+  border: 1px solid;
+}
+dialog .modal__close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+}
+.modal__form > input,
+.modal__form > textarea {
+  margin-bottom: 0.8em;
+}
+.modal__title {
+  font-size: 1.2em;
+  padding: 0.3em 0.5em;
+}
+.modal__description {
+  padding: 0.5em;
+}
+.modal__cta {
+  text-align: right;
+}
+.modal__cta button {
+  background: royalblue;
+  color: white;
+  padding: 0.5em 0.8em;
+  border-radius: 5px;
+  border: 0;
+  outline: none;
+}
+.modal__cta button:disabled {
+  filter: grayscale(90%);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.note__create button {
+  background: royalblue;
+  color: white;
+  padding: 1em 1.5em;
+  border-radius: 5px;
+  border: 0;
+  font-size: 1em;
+}
+.note__list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.note__item {
+  padding: 1em 1.5em;
+  min-width: 300px;
+  margin: 10px;
+  background-color: lightcoral;
+  position: relative;
+  border-radius: 15px;
+  max-width: 250px;
+  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.5);
+  transition: all 0.5s;
+}
+.note__item:hover {
+  background-color: #eb5252;
+  transform: scale(1.02);
+}
+.note__title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 0.8em;
+}
+.note__description {
+  margin-bottom: 0.8em;
+}
+.note__cta {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+}
+.note__cta span + span {
+  margin-left: 0.5em;
+}

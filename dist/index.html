@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Notes app JS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<dialog id="modal">
+  <form class="modal__form">
+    <input class="modal__title" type="text" placeholder="Insert Title" autofocus="autofocus"/>
+    <textarea class="modal__description" rows="8" cols=" 50" placeholder="Add Note" size="30"></textarea>
+    <div class="modal__cta">
+      <button class="modal__cta--clean" type="button" onclick="cleanForm()" disabled="disabled">Clean</button>
+      <button class="modal__cta--add" type="submit" onclick="saveNote(event)" disabled="disabled">Save</button>
+    </div>
+  </form><span class="modal__close" id="closeModal" onclick="closeModal()"><i class="fas fa-times" role="button"></i></span>
+</dialog>
+<div class="container">
+  <div class="note__create">
+    <button onclick="openModal()">Create Note</button>
+  </div>
+  <div class="note__list"></div>
+</div>
+<template>
+  <div class="note__item">
+    <div class="note__title">
+      <p>Titulo de prueba</p>
+    </div>
+    <div class="note__body">
+      <p>Ejemplo de paragrafo argumentativo</p>
+    </div>
+    <div class="note__cta"><span class="note__edit" onclick="editNote(this)"><i class="fas fa-edit"></i></span><span class="note__delete" onclick="deleteNote(this)"><i class="fas fa-trash-alt"></i></span></div>
+  </div>
+</template>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
